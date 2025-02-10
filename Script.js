@@ -2,7 +2,7 @@
 // @name         MAL Activity History
 // @namespace    http://tampermonkey.net/
 // @version      2.1
-// @description  Shows your first and latest acitivity for anime entries straigth on the anime page
+// @description  Shows your first and latest MAL acitivity for anime entries straigth on the anime page
 // @author       Miko
 // @match        https://myanimelist.net/anime/*
 // @grant        GM_xmlhttpRequest
@@ -66,7 +66,7 @@
                     // Only one entry: label it as both first and latest
                     const data = parseRow(epRows[0]);
                     if (data) {
-                        container.innerHTML += `<li>First & Latest Ep: ${data.info} - ${data.date}</li>`;
+                        container.innerHTML += `<div class="spaceit_pad"><span class="dark_text">First & Latest:</span> ${data.date}`;
                     }
                 } else {
                     // More than one entry: use the first and the last
